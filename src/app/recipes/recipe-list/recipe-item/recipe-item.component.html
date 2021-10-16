@@ -1,0 +1,7 @@
+<div class="list-group">
+    <a [routerLink]="[index]" routerLinkActive="active" style="cursor: pointer;" class="list-group-item clearfix" (click)="onSelect()">
+      <h4 class="list-group-item-heading">{{ recipe.name }}</h4>
+      <p class="list-group-item-text">{{ recipe.description }}</p>
+      <img [src]="recipe.imagePath" alt="{{ recipe.name }}" class="img-responsive pull-right" style="max-height: 100px;">
+    </a>
+</div>

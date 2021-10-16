@@ -1,0 +1,52 @@
+<form (ngSubmit)="onSubmitForm(f)" #f="ngForm">
+    <div class="row">
+        <div class="form-row align-items-center">
+        <div class="col-sm-3 my-1">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" name="nameInput"  placeholder="Ingredient Name" autocomplete="off" ngModel required>
+        </div>
+        <div class="col-sm-2 my-1">
+            <label for="amount">Amount</label>
+            <input type="number" class="form-control" id="amount" name="amountInput" placeholder="Amount" pattern="^[1-9]+[0-9]*$" ngModel required>
+        </div>
+        </div>
+    </div>
+    <br>
+    <div class="rows">
+        <div class="col-auto my-1">
+            <button type="submit" class="btn btn-primary" [disabled]="!f.valid" >{{ editMode ? 'Update' : 'Add' }}</button>
+            <button
+                type="button"
+                class="btn btn-danger ml-5"
+                (click)="onDelete()"
+                *ngIf="editMode">Delete</button>
+            <button type="button" class="btn btn-warning ml-5" (click)="onClear()">Clear</button>
+        </div>
+    </div>
+</form>
+
+
+<!-- Local Template Reference variable Before v:216 -->
+
+<!-- <form>
+    <div class="row">
+        <div class="form-row align-items-center">
+        <div class="col-sm-3 my-1">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" #nameInput  placeholder="Ingredient Name" autocomplete="off">
+        </div>
+        <div class="col-sm-2 my-1">
+            <label for="amount">Amount</label>
+            <input type="number" class="form-control" id="amount" #amountInput placeholder="Amount">
+        </div>
+        </div>
+    </div>
+    <br>
+    <div class="rows">
+        <div class="col-auto my-1">
+            <button type="button" class="btn btn-primary" (click)="addButton()">Add</button>
+            <button type="submit" class="btn btn-danger ml-5">Delete</button>
+            <button type="submit" class="btn btn-warning ml-5">Clear</button>
+        </div>
+    </div>
+</form> -->

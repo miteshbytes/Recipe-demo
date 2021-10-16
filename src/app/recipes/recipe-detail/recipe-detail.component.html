@@ -1,0 +1,47 @@
+<div class="div">
+    <div class="col-md-12">
+        <h3>{{ recipe.name }}</h3>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <img [src]="recipe.imagePath" alt="{{ recipe.name }}" class="img-responsive pull-right" style="max-height: 100px;">
+        <!-- <div class = "btn-group">
+            <button type = "button" class = "btn btn-primary dropdown-toggle" data-toggle = "dropdown">
+               Manage Recipe 
+               <span class = "caret"></span>
+            </button>
+            
+            <ul class = "dropdown-menu" role = "menu">
+                <li><a (click)="onAddToShoppingList()" [ngStyle]="{'cursor': 'pointer'}">To Shopping List</a></li>
+                <li><a (click)="onEditRecipe()" [ngStyle]="{'cursor': 'pointer'}">Edit Recipe</a></li>
+                <li><a (click)="onDeleteRecipe()" [ngStyle]="{'cursor': 'pointer'}">Delete Recipe</a></li>
+            </ul>
+        </div> -->
+        <div class="btn-group" appDropdown>
+            <button
+                type="button"
+                class="btn btn-primary dropdown-toggle">
+                Manage Recipe <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+                <li><a (click)="onAddToShoppingList()" [ngStyle]="{'cursor': 'pointer'}">To Shopping List</a></li>
+                <li><a (click)="onEditRecipe()" [ngStyle]="{'cursor': 'pointer'}">Edit Recipe</a></li>
+                <li><a (click)="onDeleteRecipe()" [ngStyle]="{'cursor': 'pointer'}">Delete Recipe</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <p>{{ recipe.description }}</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <ul class="list-group">
+            <li class="list-group-item" *ngFor="let ingredient of recipe.ingredients">
+                {{ ingredient.name }} - {{ ingredient.amount }}</li>
+        </ul>
+    </div>
+</div>

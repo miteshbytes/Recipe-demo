@@ -1,0 +1,10 @@
+<app-header (selectedNavigate)="selectedNavigation($event)"></app-header>
+<div class="container">
+  <div class="row">
+      <div class="col-md-12">
+          <!-- <app-recipes *ngIf="currentNav === 'recipes'"></app-recipes>
+          <app-shopping-list *ngIf="currentNav === 'shooping-list'"></app-shopping-list> -->
+          <router-outlet></router-outlet>
+      </div>
+  </div>
+</div>
