@@ -4,6 +4,7 @@ import { Recipe } from '../recipes/recipe.model';
 import { RecipeService } from '../recipes/services/recipe.service';
 import { map, tap } from 'rxjs/operators';
 import { AuthService } from '../auth/auth/services/auth.service';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +17,7 @@ export class DataStorageService {
   // Save Recipe on Firebase Database usig Recipe Service
   storeRecipe() {
       const recipes = this.recipeService.getRecipes();
-      this.http.put('https://recipe-demo-f7230-default-rtdb.firebaseio.com/recipes.json', recipes)
+      this.http.put(environment.databaseUrl, recipes)
         .subscribe(response => {
           console.log(response);
         });
@@ -25,7 +26,7 @@ export class DataStorageService {
   // Retrieve Recipe on Firebase Database usig Recipe Service
   fetchRecipes() {
     
-    return this.http.get<Recipe[]>('https://recipe-demo-f7230-default-rtdb.firebaseio.com/recipes.json')
+    return this.http.get<Recipe[]>(environment.databaseUrl)
       .pipe(map(recipes => {
         return recipes.map(recipe => {
           return {...recipe, ingredients: recipe.ingredients ? recipe.ingredients : [] };

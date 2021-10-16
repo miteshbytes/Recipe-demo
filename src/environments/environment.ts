@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  apiKey: 'AIzaSyCWACElCj9JstnMOaYrQ1rciIirk4tZF1w'
+  apiKey: 'AIzaSyCWACElCj9JstnMOaYrQ1rciIirk4tZF1w',
+  databaseUrl : 'https://recipe-demo-f7230-default-rtdb.firebaseio.com/recipes.json'
 };
 
 /*
