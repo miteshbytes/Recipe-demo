@@ -26,6 +26,30 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
+## Note
+
+Must have created project on firebase site and also have one created realtime database on it.
+
 ## Firebase Key
 
 apiKey: 'AIzaSyCWACElCj9JstnMOaYrQ1rciIirk4tZF1w'
+## Reference Url
+
+Firebase API Reference : https://firebase.google.com/docs/reference/rest/auth#section-create-email-password
+
+// Recipe : https://recipe-demo-f7230-default-rtdb.firebaseio.com/recipes.json  on Shared folder DataStorageService.
+
+// {
+//   "rules": {
+//     ".read": "now < 1625250600000",  // 2021-7-3
+//     ".write": "now < 1625250600000",  // 2021-7-3
+//   }
+// }
+
+
+// {
+//   "rules": {
+//     ".read": "auth != null",  // 2021-10-15
+//     ".write": "auth != null",  // 2021-10-15
+//   }
+// }
